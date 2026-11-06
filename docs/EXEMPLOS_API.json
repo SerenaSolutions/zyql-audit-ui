@@ -1,0 +1,9 @@
+{
+  "GET /health": {"status":"ok","app":"ZYQL Decision API","version":"2.5.0","verdicts":["1","0","REFUSED"],"physics":"simulação exata de vetor de estado (sem ruído de QPU)","max_n":8,"max_shots":100000},
+  "GET /limits": {"declarado":["n <= 8 na fase-oráculo simulada (2^n amplitudes em memória)","sem correção de erro quântico; nenhuma vantagem alegada sobre clássico","banda de Hoeffding cobre erro AMOSTRAL, não viés sistemático de readout","hardware real exige job ID verificável e não é executado por esta API","recusa (REFUSED) é resposta de primeira classe, não exceção"],"nao_alegado":["vantagem computacional quântica","detecção de oráculos adversariais fora da classe promise"]},
+  "POST /bound request": {"epsilon":0.01,"margin":0.05,"family":3},
+  "POST /bound response": {"epsilon":0.01,"family":3,"epsilon_por_teste":0.0033333333333333335,"shots_necessarios":1280,"formula":"m = sqrt(ln(2/(eps/k)) / (2S))"},
+  "POST /decide request": {"oracle":"parity","n":3,"shots":4096,"epsilon":0.01,"family":3,"seed":1701,"hardware":false,"sign":false},
+  "POST /decide response": {"verdict":"REFUSED","p0":0.0,"margin":0.022919094135026092,"shots":4096,"epsilon":0.01,"family":3,"mode":"DECIDED_BY_INTERFERENCE","reason":"BALANCED_ORACLE","receipt":{"versao_api":"2.5.0","oraculo":"parity","classe_esperada":"balanced","n":3,"shots":4096,"epsilon":0.01,"family":3,"seed":1701,"banda":0.022919094135026092,"p0":0.0,"veredito":"REFUSED","motivo":"BALANCED_ORACLE","fisica":"statevector_exato","hipoteses":["amostras independentes","erro amostral <= epsilon"],"selo_sha3_256":"c9c5a718b5da8a52d81779e41d27b1dbab0301db31f3aa1f434b6ac4c0067b9d"}},
+  "valores_validos": {"oracle":["const1","const0","parity"],"verdict":["1","0","REFUSED"],"n":"1 a 8","shots":"1 a 100000","epsilon":"0 < e < 0.5","family":"1 a 1000"}
+}
